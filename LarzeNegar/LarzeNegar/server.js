@@ -68,7 +68,7 @@ http.createServer(function (req, res) {
                                 buffere += chunke;
                             });
                             rese.on('end', function () {
-                                console.log(buffere);
+                                //console.log(buffere);
                             });
                         });
 
