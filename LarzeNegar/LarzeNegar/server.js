@@ -42,8 +42,41 @@ http.createServer(function (req, res) {
 
                     try
                     {
-                        console.log(buffer);
+                        //console.log(buffer);
                         var dt = buffer;
+
+                        var dataerth = {
+                            data: dt
+                        };
+                        var querystringErth = require("querystring");
+                        var qse = querystringErth.stringify(data);
+                        var qslengthe = qse.length;
+                        var options = {
+                            hostname: "ashabrasaneh.ir",
+                            port: 80,
+                            path: "/GamesData/LarzeNegar/addIranLarze.php",
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                'Content-Length': qslengthe
+                            }
+                        };
+
+                        var buffere = "";
+                        var reqe = http.request(options, function (rese) {
+                            rese.on('data', function (chunke) {
+                                buffere += chunke;
+                            });
+                            rese.on('end', function () {
+                                console.log(buffere);
+                            });
+                        });
+
+                        reqe.write(qse);
+                        reqe.end();
+
+
+
                     }
                     catch (e) {
                     }
