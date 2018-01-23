@@ -49,7 +49,7 @@ http.createServer(function (req, res) {
                             data: dt
                         };
                         var querystringErth = require("querystring");
-                        var qse = querystringErth.stringify(data);
+                        var qse = querystringErth.stringify(dataerth);
                         var qslengthe = qse.length;
                         var options = {
                             hostname: "ashabrasaneh.ir",
