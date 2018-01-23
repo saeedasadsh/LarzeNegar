@@ -87,7 +87,7 @@ http.createServer(function (req, res) {
             req.write(qs);
             req.end();
 
-        }, 60000);
+        }, 10000);
     }
     catch (e) {
     }
